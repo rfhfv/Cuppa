@@ -37,6 +37,6 @@ private extension FDCollectionTitle {
         
         title.translatesAutoresizingMaskIntoConstraints = false
         title.font = UIFont.systemFont(ofSize: 18)
-        title.text = "Title"
+        title.text = ""
     }
 }
