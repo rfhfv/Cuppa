@@ -9,14 +9,22 @@ import UIKit
 
 class ListCoordinator: Coordinator {
     
+    let factory = SceneFactory.self
+    
     override func start() {
-        
-//        let vc = HomeViewController()
-//        vc.view.backgroundColor = .white
-//        navigationController?.pushViewController(vc, animated: true)
+        showListScene()
     }
     
     override func finish() {
         print("AppCoordinator finish")
+        finishDelegate?.coordinatorDidFinish(childCoordinator: self)
+    }
+}
+
+extension ListCoordinator {
+    func showListScene() {
+        guard let navigationController = navigationController else { return }
+        let vc = factory.makeListScene(coordinator: self)
+        navigationController.pushViewController(vc, animated: true)
     }
 }

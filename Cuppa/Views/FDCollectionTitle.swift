@@ -21,7 +21,6 @@ class FDCollectionTitle: UITextField {
     }
 }
 
-
 private extension FDCollectionTitle {
     func setupLayout() {
         congfigureView()
@@ -34,7 +33,6 @@ private extension FDCollectionTitle {
     
     func  configureTitle() {
         addSubview(title)
-        
         title.translatesAutoresizingMaskIntoConstraints = false
         title.font = UIFont.systemFont(ofSize: 18)
         title.text = ""

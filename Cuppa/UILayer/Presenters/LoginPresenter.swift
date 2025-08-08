@@ -8,9 +8,8 @@
 import Foundation
 
 protocol LoginViewOutput: AnyObject {
-    
     func loginStart(login: String, password: String)
-    func registrationStart()
+    func registrationStart(login: String, password: String, reEnterPassword: String)
     func goToTGLogin()
     func goToVKLogin()
     func goToSignIn()
@@ -20,7 +19,6 @@ protocol LoginViewOutput: AnyObject {
 }
 
 class LoginPresenter {
-    
     private var coordinator: LoginCoordinator?
     weak var viewInput: LoginViewInput?
     
@@ -38,8 +36,9 @@ private extension LoginPresenter {
 
 extension LoginPresenter: LoginViewOutput {
     func loginStart(login: String, password: String) {
-        viewInput?.startLoader()
-        if login == "Test" && password == "123" {
+        if login.count >= 2 && password.count >= 2 {
+            self.viewInput?.hideNavigationItem()
+            self.viewInput?.startLoader()
             DispatchQueue.global().asyncAfter(deadline: .now() + 2.0) {
                 DispatchQueue.main.async {
                     self.viewInput?.stopLoader()
@@ -47,16 +46,30 @@ extension LoginPresenter: LoginViewOutput {
                 }
             }
         } else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                print("wrong email or password")
-                self.viewInput?.stopLoader()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.viewInput?.shakeButton()
+                self.viewInput?.showErrorLabel()
             }
         }
     }
     
-    func registrationStart() {
-        
-    }
+    func registrationStart(login: String, password: String, reEnterPassword: String) {
+        if login.count >= 2 && password.count >= 2 && password == reEnterPassword {
+            self.viewInput?.hideNavigationItem()
+                self.viewInput?.startLoader()
+                DispatchQueue.global().asyncAfter(deadline: .now() + 2.0) {
+                    DispatchQueue.main.async {
+                        self.viewInput?.stopLoader()
+                        self.goToMainScreen()
+                    }
+                }
+            } else {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    self.viewInput?.shakeButton()
+                    self.viewInput?.showErrorLabel()
+                }
+            }
+        }
     
     func goToTGLogin() {
         

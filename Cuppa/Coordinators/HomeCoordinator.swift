@@ -23,7 +23,6 @@ class HomeCoordinator: Coordinator {
 // MARK: - Navigation
 
 extension HomeCoordinator {
-    
     func showHomeScene() {
         guard let navigationController = navigationController else { return }
         let vc = factory.makeHomeScene(coordinator: self)

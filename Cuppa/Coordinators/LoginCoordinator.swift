@@ -18,7 +18,7 @@ class LoginCoordinator: Coordinator {
     // MARK: - Methods
     
     override func start() {
-    showAuthScene()
+        showAuthScene()
     }
     
     override func finish() {
@@ -30,7 +30,6 @@ class LoginCoordinator: Coordinator {
 // MARK: - Navigation
 
 extension LoginCoordinator {
-    
     func showAuthScene() {
         guard let navigationController = navigationController else { return }
         let vc = factory.makeAuthScene(coordinator: self)

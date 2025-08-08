@@ -13,19 +13,17 @@ class AppCoordinator: Coordinator {
     private let factory = SceneFactory.self
     
     override func start() {
-//        showAuthFlow()
-        showOnboardingFlow()
-//        showMainFlow()
-//        showOnboardingFlow()
         
-//        if userStorage.passedOnboarding {
-//            showMainFlow()
-//        } else {
-//            showAuthFlow()
-//        }
-//        let loginPresenter = LoginPresenter(coordinator: self)
-//        let loginVC = LoginViewController(viewOutput: loginPresenter, state: .signUp)
-//        navigationController?.pushViewController(loginVC, animated: true)
+//        showOnboardingFlow()
+//        showAuthFlow()
+//        showMainFlow()
+        
+        if userStorage.passedOnboarding {
+            showMainFlow()
+        } else {
+            showAuthFlow()
+            showOnboardingFlow()
+        }
     }
     
     override func finish() {
@@ -33,14 +31,12 @@ class AppCoordinator: Coordinator {
     }
 }
 
-
 // MARK: - Navigation methods
 
 private extension AppCoordinator {
-    
     func showOnboardingFlow() {
         guard let navigationController = navigationController else { return }
-       let onboardingCoordinator = factory.makeOnBoardingFlow(coordinator: self, finishDelegate: self, navigationController: navigationController)
+        let onboardingCoordinator = factory.makeOnBoardingFlow(coordinator: self, finishDelegate: self, navigationController: navigationController)
         onboardingCoordinator.start()
     }
     

@@ -1,0 +1,48 @@
+//
+//  DrinkCategories.swift
+//  Cuppa
+//
+//  Created by admin on 30.07.2025.
+//
+
+import Foundation
+
+enum  DrinkCategory: String, Codable {
+    case coffee = "Coffee"
+    case tea = "Tea"
+    case milkshake = "Milkshake"
+    case matcha = "Matcha"
+    case soda = "Soda"
+    case water = "Water"
+    case food = "Food"
+    case none = ""
+}
+
+enum  DrinkMenu: String, Codable {
+    case milkyWay = "Milky way"
+    case milkyNut = "Milky nut"
+    case iceWorld = "Ice world"
+    case smallMoon = "Small moon"
+    case firstLull = "First lull"
+    case sleepyOwl = "Sleepy owl"
+    case warmDawn = "Warm dawn"
+    case purpleSky = "Purple sky"
+    case youngDew = "Young dew"
+    case happyEnd = "Happy end"
+    case truelove = "True love"
+    case pureHeart  = "Pure heart"
+    case softTouch = "Soft touch"
+    case wildFire = "Wild fire"
+    case none = ""
+}
+
+enum NewsCategory: String, Codable {
+    case firstNews = "WE HAVE MOVED!     we recently moved to a new place. Read more.."
+    case secondNews = "RED EYE COFFEE features, recipe, variations. Read more.."
+    case thirdNews = "ALL ABOUT GRAINS how grain size affects the taste of coffee. Read more.."
+    case fourthNews = "THE TIPOT METHOD  a quick way to brew tea. Read more.. "
+    case fifthNews = "THE SOKOCHAI         our tasting of the popular drink. Read more.."
+    case sixthNews = "RESULTS OF 2024 what we did in 2024 and what we plan for the next. Read more.."
+    case seventhNews = "2024 ECHABITION how it was? Read more.."
+    case none = ""
+}

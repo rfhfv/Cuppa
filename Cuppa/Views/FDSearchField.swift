@@ -10,7 +10,7 @@ import UIKit
 class FDSearchField: UITextField {
     init() {
         super.init(frame: .zero)
-    setupLayout()
+        setupLayout()
     }
     
     required init?(coder: NSCoder) {

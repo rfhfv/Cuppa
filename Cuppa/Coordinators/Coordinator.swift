@@ -35,9 +35,7 @@ extension CoordinatorProtocol {
     func removeChildCoordinators(_ childCoordinator: CoordinatorProtocol) {
         childCoordinators = childCoordinators.filter { $0 !== childCoordinator }
     }
-    
 }
-
 
 protocol CoordinatorFinishDelegate: AnyObject {
     func coordinatorDidFinish(childCoordinator: CoordinatorProtocol)
@@ -65,7 +63,7 @@ class Coordinator: CoordinatorProtocol {
         childCoordinators.forEach { $0.finishDelegate = nil }
         childCoordinators.removeAll()
     }
-
+    
     func start() {
         print("Coordinator start")
     }
