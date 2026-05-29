@@ -1,19 +1,35 @@
-COFFEE SHOP APP - CUPPA
+# Cuppa
 
-A mobile application for ordering drinks: coffee, tea, milkshakes and etc.
+iOS coffee shop app for ordering drinks built with Swift + MVP + Coordinator. Browse coffee, tea, and milkshakes by category, view author's menu, and check news and promotions.
 
-MAIN FUNCTIONS
+## Screenshots
 
-• Drink Search — Quick search by name and category
+<img width="1794" height="784" alt="Image" src="https://github.com/user-attachments/assets/7a48fa92-0ba2-4301-a694-f7c85d973cb5" />
 
-• Navigation by category — coffee, tea, milkshakes
+## Features
 
-• Author's menu — unique drinks with vivid photos
+- **Category Navigation:** Browse coffee, tea, and milkshakes
+- **Author's Menu:** Unique drinks with vivid photos
+- **News & Promotions:** Up-to-date information about new products and special offers
+- **Onboarding:** Welcome screen for new users
+- **Easy Navigation:** Switch between main page, orders, favorites, and profile
 
-• News and promotions — up-to-date information about new products and special offers
+## Tech Stack
 
-• Easy navigation — easily switch between the main page, orders, favorites list and profile
+- **Swift** + **UIKit**
+- **MVP** + **Coordinator** architecture
 
-SCREENSHOTS
+## Architecture
 
-<img width="1400" height="700" alt="Image" src="https://github.com/user-attachments/assets/3608cbff-9c55-4990-9494-777611e90135" />
+The project follows MVP + Coordinator architecture:
+
+- **View:** UIKit views, passive UI controllers
+- **Presenter:** Business logic, state management, updates the view
+- **Model:** Data entities
+- **Coordinator:** Navigation and flow management
+
+## Installation
+
+- git clone https://github.com/rfhfv/Cuppa.git
+- cd Cuppa
+- open Cuppa.xcodeproj
